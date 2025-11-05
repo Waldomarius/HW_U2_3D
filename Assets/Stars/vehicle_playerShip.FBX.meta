@@ -3,7 +3,17 @@ guid: 5cead9f970111634a93d34a725d7c490
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vehicle_playerShip_glass_mat
+    second: {fileID: 2100000, guid: 0638809d7b75c994283d7a2563534a14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vehicle_playerShip_metal_mat
+    second: {fileID: 2100000, guid: 6b87c9478b8b5c04a9b9b165bc1a9907, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
