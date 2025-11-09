@@ -39,7 +39,7 @@ namespace bulletsControl
         private void OnTriggerExit(Collider other)
         {
             GameObject go = other.gameObject;
-            if (go.tag is "Bundary")
+            if (go.tag is "Boundary" && gameObject.tag is "Bullet")
             {
                 _bulletComponent.ReturnBullet(_bulletData);
                 Destroy(gameObject);
