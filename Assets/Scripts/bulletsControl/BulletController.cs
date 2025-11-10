@@ -41,11 +41,26 @@ namespace bulletsControl
             GameObject go = other.gameObject;
             if (go.tag is "Boundary" && gameObject.tag is "Bullet")
             {
-                _bulletComponent.ReturnBullet(_bulletData);
-                Destroy(gameObject);
-                Debug.Log("OnTriggerExit: Destroy bullet gameobject and return to pool");
+                ReturnAndDestroyBullet();
             }
+        }
+        
+        private void OnTriggerEnter(Collider other)
+        {
+            GameObject go = other.gameObject;
+            
+            // Пуля столкнулась с астероидом
+            if (go.tag is "Asteroid" && gameObject.tag is "Bullet")
+            {
+                ReturnAndDestroyBullet();
+            }
+        }
 
+        private void ReturnAndDestroyBullet()
+        {
+            _bulletComponent.ReturnBullet(_bulletData);
+            Destroy(gameObject);
+            Debug.Log("OnTriggerExit: Destroy bullet gameobject and return to pool");
         }
     }
 }

@@ -27,7 +27,7 @@ public class AsteroidSpawner : MonoBehaviour
         {
             AsteroidMoveComponent component = go.GetComponent<AsteroidMoveComponent>();
             // Подписка на слушателя
-            component.IsOutBoundary += ReturnAsteroid;
+            component.returnInPool += ReturnAsteroid;
         }
     }
 
@@ -57,7 +57,7 @@ public class AsteroidSpawner : MonoBehaviour
         {
             AsteroidMoveComponent component = go.GetComponent<AsteroidMoveComponent>();
             // Отписка на слушателя
-            component.IsOutBoundary -= ReturnAsteroid;
+            component.returnInPool -= ReturnAsteroid;
         }
     }
 }

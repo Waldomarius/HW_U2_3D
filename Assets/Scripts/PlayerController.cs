@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _tilt = 10f;
     
     [SerializeField] private Boundary _boundary;
+    [SerializeField] private GameObject _explosion;
     
     private Rigidbody _rigidbody;
 
@@ -41,4 +44,17 @@ public class PlayerController : MonoBehaviour
         
         _rigidbody.rotation = Quaternion.Euler(0.0f, 0.0f, _rigidbody.velocity.x * -_tilt);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject go = other.gameObject;
+            
+        // Астероид столкнулся с игроком
+        if (go.tag is "Asteroid" && gameObject.tag is "Player")
+        {
+            Destroy(gameObject);
+            Instantiate(_explosion, gameObject.transform.position, gameObject.transform.rotation);
+        }
+    }
+
 }

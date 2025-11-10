@@ -9,7 +9,9 @@ namespace asteroid
         [SerializeField] private float _speed;
         [SerializeField] private float _rotation;
         
-        public Action<GameObject> IsOutBoundary;
+        [SerializeField] private GameObject _explosion;
+
+        public Action<GameObject> returnInPool;
         
         private Rigidbody _rb;
 
@@ -27,7 +29,19 @@ namespace asteroid
             GameObject go = other.gameObject;
             if (go.tag is "Boundary" && gameObject.tag is "Asteroid")
             {
-                IsOutBoundary?.Invoke(gameObject);
+                returnInPool?.Invoke(gameObject);
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            GameObject go = other.gameObject;
+            
+            // Астероид столкнулся с игроком или пулей
+            if (gameObject.tag is "Asteroid" && go.tag is "Player" or "Bullet")
+            {
+                Instantiate(_explosion, gameObject.transform.position, gameObject.transform.rotation);
+                returnInPool?.Invoke(gameObject);
             }
         }
     }

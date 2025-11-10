@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _rotation: 4
+  _explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 3}
 --- !u!1001 &2950802996205343281
 PrefabInstance:
   m_ObjectHideFlags: 0
