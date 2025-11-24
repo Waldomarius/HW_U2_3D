@@ -55,7 +55,7 @@ namespace pool
                 return null;
             }
             
-            int randomGo = Random.Range(0, freeGo.Count - 1);
+            int randomGo = Random.Range(0, freeGo.Count);
             GameObject result =  freeGo[randomGo];
             result.transform.position = position;
             result.SetActive(true);

@@ -1,5 +1,5 @@
-﻿using DefaultNamespace.interfaces;
-using factory.bullets;
+﻿using bullets;
+using DefaultNamespace.interfaces;
 using UnityEngine;
 
 namespace bulletsControl

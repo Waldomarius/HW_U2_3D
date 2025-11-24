@@ -40,7 +40,7 @@ public class AsteroidSpawner : MonoBehaviour
 
     private void SpawnAsteroid()
     {
-        int randomXPosition = Random.Range(xMinPosition, xMaxPosition);
+        int randomXPosition = Random.Range(xMinPosition, xMaxPosition + 1);
         Vector3 position = new Vector3(randomXPosition, transform.position.y, transform.position.z);
         _pool.GetOrCreateAsteroid(position);
         Invoke(nameof(SpawnAsteroid), 1f);

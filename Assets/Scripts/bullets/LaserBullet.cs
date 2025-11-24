@@ -1,5 +1,6 @@
-﻿
-namespace factory.bullets
+﻿using factory;
+
+namespace bullets
 {
     public class LaserBullet : BaseBullet
     {

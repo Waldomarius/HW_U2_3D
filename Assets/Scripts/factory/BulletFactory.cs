@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
+using bullets;
 using DefaultNamespace.interfaces;
-using factory.bullets;
 using UnityEngine;
 
 namespace factory

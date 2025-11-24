@@ -37,8 +37,8 @@ namespace asteroid
         {
             GameObject go = other.gameObject;
             
-            // Астероид столкнулся с игроком или пулей
-            if (gameObject.tag is "Asteroid" && go.tag is "Player" or "Bullet")
+            // Астероид столкнулся с игроком или пулей или другим астероидом
+            if (gameObject.tag is "Asteroid" && go.tag is "Player" or "Bullet" or "Asteroid")
             {
                 Instantiate(_explosion, gameObject.transform.position, gameObject.transform.rotation);
                 returnInPool?.Invoke(gameObject);

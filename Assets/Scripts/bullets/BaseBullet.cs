@@ -2,7 +2,7 @@
 using DefaultNamespace.interfaces;
 using UnityEngine;
 
-namespace factory.bullets
+namespace bullets
 {
     public abstract class BaseBullet : MonoBehaviour, IBullet
     {
